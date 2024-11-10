@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        //enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         // Инициализация FragmentNavigator
@@ -28,8 +28,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun openFragment(f: Fragment, idHolder: Int) {
-        fragmentNavigator.openFragment(f, idHolder)
+            supportFragmentManager
+            .beginTransaction()
+            .replace(idHolder, f)
+            //.addToBackStack(null)
+            .commit()
+        //fragmentNavigator.setupBackNavigation(f)
+        //fragmentNavigator.openFragment(f, idHolder)
         // Настройка навигации "Назад" для нового фрагмента
-        fragmentNavigator.setupBackNavigation(f)
+
     }
 }
