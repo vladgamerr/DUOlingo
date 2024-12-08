@@ -16,29 +16,41 @@
             android:layout_width="389dp"
             android:layout_height="201dp"
             android:layout_marginTop="116dp"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <View
+        <androidx.cardview.widget.CardView
             android:id="@+id/view"
-            android:layout_width="379dp"
+            android:layout_width="300dp"
             android:layout_height="201dp"
             android:layout_marginTop="40dp"
             android:background="@color/white"
+            app:cardCornerRadius="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/videoView2" />
+            app:layout_constraintTop_toBottomOf="@+id/videoView2">
+
+            <ImageView
+                android:layout_width="247dp"
+                android:layout_height="214dp"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="fitXY"
+                android:src="@drawable/hometext" />
+        </androidx.cardview.widget.CardView>
 
         <Button
             android:id="@+id/btolvls"
-            android:layout_width="0dp"
+            android:layout_width="300dp"
             android:layout_height="70dp"
             android:layout_marginBottom="15dp"
-            android:text="Уровни"
+            android:text="Levels"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/skyblue"
             android:textAlignment="gravity"
-            android:textSize="34sp"
+            android:textSize="35sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
