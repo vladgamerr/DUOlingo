@@ -44,13 +44,9 @@ class LvlFragment7 : Fragment() {
             }
         }
 
-        binding.stopButton.setOnClickListener {
-            stopAudio()
-        }
-
         // Инициализация SeekBar
-        binding.seekBar.max = mediaPlayer?.duration ?: 0
         mediaPlayer?.setOnPreparedListener {
+            binding.seekBar.max = it.duration
             binding.totalTime.text = formatTime(it.duration)
             startUpdatingSeekBar()
         }
@@ -70,21 +66,13 @@ class LvlFragment7 : Fragment() {
         mediaPlayer?.start()
         isPlaying = true
         binding.playPauseButton.setImageResource(R.drawable.ic_pause_foreground) // Иконка паузы
+        startUpdatingSeekBar() // Запустить обновление SeekBar
     }
 
     private fun pauseAudio() {
         mediaPlayer?.pause()
         isPlaying = false
         binding.playPauseButton.setImageResource(R.drawable.ic_play_foreground) // Иконка воспроизведения
-    }
-
-    private fun stopAudio() {
-        mediaPlayer?.stop()
-        mediaPlayer?.prepareAsync() // Подготовка для последующего воспроизведения
-        isPlaying = false
-        binding.playPauseButton.setImageResource(R.drawable.ic_play_foreground) // Иконка воспроизведения
-        binding.seekBar.progress = 0
-        binding.currentTime.text = "0:00" // Сброс текущего времени
     }
 
     private fun startUpdatingSeekBar() {

@@ -20,7 +20,7 @@
         android:id="@+id/totalTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="3:16" />
+        android:text="0:00" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -36,12 +36,6 @@
             android:contentDescription="Play/Pause"
             android:background="?attr/selectableItemBackground" />
 
-        <ImageButton
-            android:id="@+id/stopButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_stop_foreground"
-            android:contentDescription="Stop"
-            android:background="?attr/selectableItemBackground" />
+
     </LinearLayout>
 </LinearLayout>
