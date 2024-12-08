@@ -25,8 +25,12 @@ class LvlFragment2 : Fragment() {
         return inflater.inflate(R.layout.fragment_lvl2, container, false)
     }
 
-    companion object {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
+    }
+
+    companion object {
         @JvmStatic
         fun newInstance() = LvlFragment2()
     }

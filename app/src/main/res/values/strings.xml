@@ -2,5 +2,6 @@
     <string name="app_name">Empty_view_activity</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="f2_t1">Click on the presentation and study the specialities offered by Vitebsk State University named after P.M. Masherov.Click on the presentation and study the specialities offered by Vitebsk State University named after P.M. Masherov.Click on the presentation and study the specialities offered by Vitebsk State University named after P.M. Masherov.Click on the presentation and study the specialities offered by Vitebsk State University named after P.M. Masherov.Click on the presentation and study the specialities offered by Vitebsk State University named after P.M. Masherov.Click on the presentation and study the specialities offered by Vitebsk State University named after P.M. Masherov.Click on the presentation and study the specialities offered by Vitebsk State University named after P.M. Masherov.</string>
+    <string name="f2_t1">Click on the presentation and study the specialities offered by Vitebsk State University named after P.M. Masherov.</string>
+    <string name="f2_t2">Write an essay in English using the language models such as "2nd Conditional sentences" about your future profession and the speciality you plan to enter, and then present it in front of the class.</string>
 </resources>

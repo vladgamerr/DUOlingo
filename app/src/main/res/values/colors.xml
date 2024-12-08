@@ -5,4 +5,5 @@
     <color name="blue">#384ABB</color>
     <color name="skyblue">#7986D5</color>
     <color name="bluewhite">#CFD7FF</color>
+    <color name="none">#00FFFFFF</color>
 </resources>
