@@ -50,7 +50,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/f2_t1"
-                android:textSize="20sp"
+                android:textSize="22sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -59,7 +59,7 @@
                 android:layout_width="wrap_content"
                 android:text="> Show presentation"
                 android:paddingStart="0dp"
-                android:textSize="20sp"
+                android:textSize="22sp"
                 android:backgroundTint="@color/none"
                 android:textColor="@color/blue"
                 android:layout_height="50dp"
@@ -74,19 +74,21 @@
                 app:cardCornerRadius="10dp"
                 android:backgroundTint="@color/bluewhite">
                 <TextView
+                    android:id="@+id/toShow"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:visibility="gone"
                     android:padding="10dp"
                     android:text="@string/f2_t2"
-                    android:textSize="20sp" />
+                    android:textSize="22sp" />
                 <TextView
+                    android:id="@+id/toHide"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:textAlignment="center"
                     android:text="Show task"
                     android:padding="10dp"
-                    android:textSize="20sp" />
+                    android:textSize="22sp" />
 
             </androidx.cardview.widget.CardView>
 
