@@ -60,6 +60,15 @@ class LvlFragment7 : Fragment() {
 
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {}
         })
+
+        binding.taskCardView.setOnClickListener {
+            binding.toShow.visibility = View.VISIBLE
+            binding.toHide.visibility = View.GONE
+        }
+
+        binding.backButton.setOnClickListener {
+            parentFragmentManager.popBackStack()
+        }
     }
 
     private fun playAudio() {

@@ -4,4 +4,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="f2_t1">Click on the presentation and study the specialities offered by Vitebsk State University named after P.M. Masherov.</string>
     <string name="f2_t2">Write an essay in English using the language models such as "2nd Conditional sentences" about your future profession and the speciality you plan to enter, and then present it in front of the class.</string>
+    <string name="f7_t1">Listen to the audio about international cooperation at the VSU named after P.M. Masherov.</string>
+    <string name="f7_t2">Draw two maps:\n
+        \n 1) a map where you should mark the countries which cooperate with VSU and the cities where students of VSU underwent internships;\n
+        \n 2) a map with places which you would like to visit when you become a student. Present your project by the end of the topic "International Cooperation".</string>
 </resources>

@@ -3,6 +3,7 @@ package com.example.empty_view_activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -40,20 +41,22 @@ class LvlFragment2 : Fragment() {
         binding.presentationButton.setOnClickListener{
             openPresentation()
         }
+        binding.backButton.setOnClickListener {
+            parentFragmentManager.popBackStack()
+        }
 
     }
 
     private fun openPresentation() {
         // Копируем файл из raw в кеш
-        val inputStream = resources.openRawResource(R.raw.my_presentation)
-        val tempFile = File(requireContext().cacheDir, "presentation.pptx")
+        val inputStream = resources.openRawResource(R.raw.pres)
+        val tempFile = File(requireContext().cacheDir, "document.pdf")
 
         inputStream.use { input ->
             FileOutputStream(tempFile).use { output ->
                 input.copyTo(output)
             }
         }
-
         // Генерируем URI с помощью FileProvider
         val uri: Uri = FileProvider.getUriForFile(
             requireContext(),
@@ -63,15 +66,13 @@ class LvlFragment2 : Fragment() {
 
         // Создаем Intent для открытия файла
         val intent = Intent(Intent.ACTION_VIEW).apply {
+            setDataAndType(uri, "application/pdf")
             addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
         }
-        intent.setType("application/vnd.openxmlformats-officedocument.presentationml.presentation");
-
-        // Запускаем Intent с выбором приложения
-        if (intent.resolveActivity(requireActivity().packageManager) != null) {
-            startActivity(intent)
-        } else {
-            Toast.makeText(context, "Нет приложений для открытия презентации.", Toast.LENGTH_SHORT).show()
+        try {
+            startActivity(Intent.createChooser(intent, "Выберите приложение для открытия презентации"))
+        } catch (e: Exception) {
+            Toast.makeText(requireContext(), "Нет приложений для открытия презентации", Toast.LENGTH_SHORT).show()
         }
     }
 
