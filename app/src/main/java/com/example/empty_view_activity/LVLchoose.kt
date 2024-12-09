@@ -53,6 +53,9 @@ class LvlChoose : Fragment() {
         binding.imageButton8.setOnClickListener {
             fragmentNavigator.openFragment(LvlFragment8.newInstance(), R.id.place_holder1)
         }
+        binding.backButton.setOnClickListener {
+            parentFragmentManager.popBackStack()
+        }
     }
 
     companion object {
