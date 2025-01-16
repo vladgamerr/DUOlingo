@@ -11,13 +11,21 @@ class FragmentNavigator(private val activity: AppCompatActivity) {
             .replace(containerId, fragment)
             .addToBackStack(null)
             .commit()
-            Log.d("debug",fragment.parentFragmentManager.backStackEntryCount.toString()   )
+        Log.d("debug", fragment.parentFragmentManager.backStackEntryCount.toString())
+    }
+
+    fun openFragment(fragment: Fragment, containerId: Int, ignoreBackStack: Boolean) {
+        activity.supportFragmentManager
+            .beginTransaction()
+            .replace(containerId, fragment)
+            .commit()
+        Log.d("debug", fragment.parentFragmentManager.backStackEntryCount.toString())
     }
 
     fun setupBackNavigation(fragment: Fragment) {
         val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                Log.d("debug",fragment.parentFragmentManager.backStackEntryCount.toString()   )
+                Log.d("debug", fragment.parentFragmentManager.backStackEntryCount.toString())
                 if (fragment.parentFragmentManager.backStackEntryCount > 0) {
 
                     fragment.parentFragmentManager.popBackStack()

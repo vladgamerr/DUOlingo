@@ -81,12 +81,12 @@
             android:id="@+id/imageButton5"
             android:layout_width="85dp"
             android:layout_height="115dp"
-            android:layout_marginTop="368dp"
+            android:layout_marginTop="400dp"
             android:background="@null"
             android:scaleType="centerInside"
             android:src="@drawable/lvl5"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.098"
+            app:layout_constraintHorizontal_bias="0.082"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -94,7 +94,7 @@
             android:id="@+id/imageButton6"
             android:layout_width="85dp"
             android:layout_height="115dp"
-            android:layout_marginBottom="236dp"
+            android:layout_marginBottom="284dp"
             android:background="@null"
             android:scaleType="centerInside"
             android:src="@drawable/lvl6"
