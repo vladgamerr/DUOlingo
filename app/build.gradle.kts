@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -39,6 +40,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.firebase.auth)
     val lifecycle_version = "2.8.7"
     val fragment_version = "1.8.5"
     implementation("androidx.appcompat:appcompat:1.3.1")

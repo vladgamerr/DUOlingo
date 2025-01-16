@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         fragmentNavigator = FragmentNavigator(this)
 
         // Открытие начального фрагмента
-        openFragment(Home.newInstance(), R.id.place_holder1)
+        openFragment(AuthFragment.newInstance(), R.id.place_holder1)
     }
 
     private fun openFragment(f: Fragment, idHolder: Int) {

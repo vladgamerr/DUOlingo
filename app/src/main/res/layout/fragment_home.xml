@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/blurredbg"
+    android:background="@drawable/bg"
     tools:context=".Home">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -35,7 +35,7 @@
 
             <ImageView
                 android:layout_width="247dp"
-                android:layout_height="214dp"
+                android:layout_height="210dp"
                 android:layout_gravity="center_horizontal"
                 android:scaleType="fitXY"
                 android:src="@drawable/hometext" />
@@ -48,8 +48,9 @@
             android:layout_marginBottom="15dp"
             android:text="Levels"
             android:backgroundTint="@color/white"
-            android:textColor="@color/skyblue"
+            android:textColor="@color/blue"
             android:textAlignment="gravity"
+            android:textStyle="bold"
             android:textSize="35sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
