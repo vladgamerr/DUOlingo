@@ -3,13 +3,12 @@ package com.example.empty_view_activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.FileProvider
+import androidx.fragment.app.Fragment
 import com.example.empty_view_activity.databinding.FragmentLvl2Binding
 import java.io.File
 import java.io.FileOutputStream
@@ -38,7 +37,7 @@ class LvlFragment2 : Fragment() {
             binding.toShow.visibility = View.VISIBLE
             binding.toHide.visibility = View.GONE
         }
-        binding.presentationButton.setOnClickListener{
+        binding.presentationButton.setOnClickListener {
             openPresentation()
         }
         binding.backButton.setOnClickListener {
@@ -70,9 +69,18 @@ class LvlFragment2 : Fragment() {
             addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
         }
         try {
-            startActivity(Intent.createChooser(intent, "Выберите приложение для открытия презентации"))
+            startActivity(
+                Intent.createChooser(
+                    intent,
+                    "Выберите приложение для открытия презентации"
+                )
+            )
         } catch (e: Exception) {
-            Toast.makeText(requireContext(), "Нет приложений для открытия презентации", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                requireContext(),
+                "Нет приложений для открытия презентации",
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 
