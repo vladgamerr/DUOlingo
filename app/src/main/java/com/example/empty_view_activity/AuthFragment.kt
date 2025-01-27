@@ -36,7 +36,10 @@ class AuthFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         mAuth = FirebaseAuth.getInstance()
         fragmentNavigator = FragmentNavigator(requireActivity() as AppCompatActivity)
-
+        binding.skipButton.setOnClickListener{
+            parentFragmentManager.popBackStackImmediate(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+            fragmentNavigator.openFragment(Home.newInstance(), R.id.place_holder1,true)
+        }
         binding.loginButton.setOnClickListener {
             binding.progressBar.visibility = View.VISIBLE
             var number = binding.phone.text.toString()
