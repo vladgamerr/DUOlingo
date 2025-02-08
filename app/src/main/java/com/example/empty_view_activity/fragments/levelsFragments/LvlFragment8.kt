@@ -1,20 +1,21 @@
-package com.example.empty_view_activity
+package com.example.empty_view_activity.fragments.levelsFragments
 
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.Handler
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
-import com.example.empty_view_activity.databinding.FragmentLvl7Binding
+import androidx.fragment.app.Fragment
+import com.example.empty_view_activity.R
+import com.example.empty_view_activity.databinding.FragmentLvl8Binding
 
-class LvlFragment7 : Fragment() {
+class LvlFragment8 : Fragment() {
 
     private var mediaPlayer: MediaPlayer? = null
     private var isPlaying = false
-    private var _binding: FragmentLvl7Binding? = null
+    private var _binding: FragmentLvl8Binding? = null
     private val binding get() = _binding!!
     private val handler = Handler()
     private var runnable: Runnable? = null
@@ -27,14 +28,15 @@ class LvlFragment7 : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentLvl7Binding.inflate(inflater, container, false)
+        _binding = FragmentLvl8Binding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        mediaPlayer = MediaPlayer.create(context, R.raw.lvl7) // Замените на имя вашего файла
+        mediaPlayer =
+            MediaPlayer.create(context, R.raw.nationalcaracter) // Замените на имя вашего файла
 
         binding.playPauseButton.setOnClickListener {
             if (isPlaying) {
@@ -117,6 +119,6 @@ class LvlFragment7 : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance() = LvlFragment7()
+        fun newInstance() = LvlFragment8()
     }
 }

@@ -1,4 +1,4 @@
-package com.example.empty_view_activity
+package com.example.empty_view_activity.fragments.levelsFragments
 
 import android.content.Intent
 import android.net.Uri
@@ -9,13 +9,15 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
+import com.example.empty_view_activity.R
 import com.example.empty_view_activity.databinding.FragmentLvl2Binding
+import com.example.empty_view_activity.databinding.FragmentLvl6Binding
 import java.io.File
 import java.io.FileOutputStream
 
 
-class LvlFragment2 : Fragment() {
-    private lateinit var binding: FragmentLvl2Binding
+class LvlFragment6 : Fragment() {
+    private lateinit var binding: FragmentLvl6Binding
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,7 +28,7 @@ class LvlFragment2 : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentLvl2Binding.inflate(inflater, container, false)
+        binding = FragmentLvl6Binding.inflate(inflater, container, false)
         val view = binding.root
         return view
     }
@@ -48,7 +50,7 @@ class LvlFragment2 : Fragment() {
 
     private fun openPresentation() {
         // Копируем файл из raw в кеш
-        val inputStream = resources.openRawResource(R.raw.pres)
+        val inputStream = resources.openRawResource(R.raw.tourism)
         val tempFile = File(requireContext().cacheDir, "document.pdf")
 
         inputStream.use { input ->
@@ -86,7 +88,7 @@ class LvlFragment2 : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance() = LvlFragment2()
+        fun newInstance() = LvlFragment6()
     }
 }
 

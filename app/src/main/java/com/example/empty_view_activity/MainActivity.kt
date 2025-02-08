@@ -2,13 +2,11 @@ package com.example.empty_view_activity
 
 import FragmentNavigator
 import android.os.Bundle
-import android.view.View
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.empty_view_activity.fragments.authFragments.AuthFragment
 import com.example.empty_view_activity.databinding.ActivityMainBinding
-import com.google.android.material.internal.EdgeToEdgeUtils
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding

@@ -9,6 +9,14 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.activityViewModels
 import com.example.empty_view_activity.databinding.FragmentLvlChooseBinding
+import com.example.empty_view_activity.fragments.levelsFragments.LvlFragment1
+import com.example.empty_view_activity.fragments.levelsFragments.LvlFragment2
+import com.example.empty_view_activity.fragments.levelsFragments.LvlFragment3
+import com.example.empty_view_activity.fragments.levelsFragments.LvlFragment4
+import com.example.empty_view_activity.fragments.levelsFragments.LvlFragment5
+import com.example.empty_view_activity.fragments.levelsFragments.LvlFragment6
+import com.example.empty_view_activity.fragments.levelsFragments.LvlFragment7
+import com.example.empty_view_activity.fragments.levelsFragments.LvlFragment8
 
 class LvlChoose : Fragment() {
     private lateinit var fragmentNavigator: FragmentNavigator
@@ -54,7 +62,7 @@ class LvlChoose : Fragment() {
             fragmentNavigator.openFragment(LvlFragment8.newInstance(), R.id.place_holder1)
         }
         binding.backButton.setOnClickListener {
-            parentFragmentManager.popBackStack()
+            fragmentNavigator.openFragment(Home.newInstance(), R.id.place_holder1,true)
         }
     }
 
