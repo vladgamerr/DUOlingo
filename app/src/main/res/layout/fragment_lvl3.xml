@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fonbg"
-    tools:context=".LvlFragment3">
+    tools:context=".fragments.levelsFragments.LvlFragment3">
 
     <View
         android:id="@+id/topLine"
         android:layout_width="match_parent"
         android:layout_height="90dp"
-        android:background="@color/blue6"
+        android:background="@color/skyblue"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
@@ -31,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:text="Environment"
-        android:textColor="@color/blue4"
+        android:textColor="@color/bluewhite"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/backButton"
@@ -53,7 +52,6 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/blue4"
                 android:text="@string/f3_t1"
                 android:textSize="22sp" />
 
@@ -64,7 +62,7 @@
                 android:paddingStart="0dp"
                 android:textSize="22sp"
                 android:backgroundTint="@color/none"
-                android:textColor="@color/blue2"
+                android:textColor="@color/blue"
                 android:layout_height="50dp"
                 android:layout_marginTop="5dp"/>
 
@@ -75,7 +73,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 app:cardCornerRadius="10dp"
-                android:backgroundTint="@color/blue6">
+                android:backgroundTint="@color/bluewhite">
                 <TextView
                     android:id="@+id/toShow"
                     android:layout_width="wrap_content"
@@ -89,7 +87,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:textAlignment="center"
-                    android:textColor="@color/blue4"
                     android:text="Show task"
                     android:padding="10dp"
                     android:textSize="22sp" />

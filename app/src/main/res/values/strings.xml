@@ -2,12 +2,28 @@
     <string name="app_name">Empty_view_activity</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="f1_t1">Watch a video about Pyotr Mironovich Masherov.</string>
+    <string name="f1_t2">Complete the following tasks: \n
+       \n 1) To consolidate the language material ‘Collective Nouns’ write down in your notebooks all the collective nouns you have heard in the video.
+       \n 2) For better memorisation of information about P.M. Masherov and learning new vocabulary, take a quiz.
+    </string>
     <string name="f2_t1">Click on the presentation and study the specialities offered by Vitebsk State University named after P.M. Masherov.</string>
     <string name="f2_t2">Write an essay in English using the language models such as "2nd Conditional sentences" about your future profession and the speciality you plan to enter, and then present it in front of the class.</string>
+    <string name="f3_t1">Study the presentation about Yelnya Ecological Trail and write down new vocabulary in your notebooks.</string>
+    <string name="f3_t2">The task: To consolidate new vocabulary, do a written translation of the presented text into Russian in your notebook.</string>
+    <string name="f4_t1">Take a virtual tour of Vitebsk State University with the help of a teacher. The teacher will be your guide and will accompany the route in English.  Follow the link to take a virtual tour of the university.</string>
+    <string name="f4_t2">Take a quiz and check your knowledge of different locations of VSU. </string>
+    <string name="f5_t1">Beforehand, you need to go on a VR-quest to the memorable places of Belarus.</string>
+    <string name="f5_t2"> After completing the VR-quest, take a quiz in English on historical sights of the Republic of Belarus.</string>
+    <string name="f6_t1">To study ecological tourism in Belarus and tourist routes to natural sites, study the presentation in English about National Parks and State Reserves of the Republic of Belarus.</string>
+    <string name="f6_t2">Prepare a presentation in English about your favourite natural site.</string>
     <string name="f7_t1">Listen to the audio about international cooperation at the VSU named after P.M. Masherov.</string>
     <string name="f7_t2">Draw two maps:\n
         \n 1) a map where you should mark the countries which cooperate with VSU and the cities where students of VSU underwent internships;\n
         \n 2) a map with places which you would like to visit when you become a student. Present your project by the end of the topic "International Cooperation".</string>
-    <string name="f3_t1">Study the presentation about Yelnya Ecological Trail and write down new vocabulary in your notebooks. </string>
-    <string name="f3_t2">The task: To consolidate new vocabulary, do a written translation of the presented text into Russian in your notebook.</string>
+    <string name="f8_t1">Listen to an audio track in English about the School of Leaders ‘Masherovtsy’.</string>
+    <string name="f8_t2">
+        Task 1: Write down in your notebooks the pronouns you have heard in the audio track and identify their type (personal, possessive, reflexive, relative, etc.).\n\n
+        Task 2: Translate the motto, the speech, the first verse and the chorus of the Masherovtsy anthem into English, underlining the pronouns.
+</string>
 </resources>

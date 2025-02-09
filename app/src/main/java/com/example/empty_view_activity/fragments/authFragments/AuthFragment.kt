@@ -1,4 +1,4 @@
-package com.example.empty_view_activity
+package com.example.empty_view_activity.fragments.authFragments
 
 import FragmentNavigator
 import android.os.Bundle
@@ -10,6 +10,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import com.example.empty_view_activity.Home
+import com.example.empty_view_activity.R
 import com.example.empty_view_activity.databinding.FragmentAuthBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -42,10 +44,10 @@ class AuthFragment : Fragment() {
         }
         binding.loginButton.setOnClickListener {
             binding.progressBar.visibility = View.VISIBLE
-            var number = binding.phone.text.toString()
+            var email = binding.phone.text.toString()
             var password = binding.password.text.toString()
-            if (TextUtils.isEmpty(number)) {
-                Toast.makeText(context, "Enter card number", Toast.LENGTH_SHORT).show();
+            if (TextUtils.isEmpty(email)) {
+                Toast.makeText(context, "Enter email address", Toast.LENGTH_SHORT).show();
                 binding.progressBar.visibility = View.GONE
                 return@setOnClickListener
             }
@@ -55,11 +57,13 @@ class AuthFragment : Fragment() {
                 return@setOnClickListener
             }
 
-            val email = "$number@example.com"
             mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
                 if (it.isSuccessful) {
-                    parentFragmentManager.popBackStackImmediate(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
-                    fragmentNavigator.openFragment(Home.newInstance(), R.id.place_holder1,true)
+                    parentFragmentManager.popBackStackImmediate(
+                        null,
+                        FragmentManager.POP_BACK_STACK_INCLUSIVE
+                    )
+                    fragmentNavigator.openFragment(Home.newInstance(), R.id.place_holder1, true)
                 } else {
                     binding.progressBar.visibility = View.GONE
                     Toast.makeText(context, "Authentication failed", Toast.LENGTH_SHORT).show();

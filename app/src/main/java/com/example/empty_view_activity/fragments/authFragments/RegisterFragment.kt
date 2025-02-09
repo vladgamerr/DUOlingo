@@ -1,4 +1,4 @@
-package com.example.empty_view_activity
+package com.example.empty_view_activity.fragments.authFragments
 
 import FragmentNavigator
 import android.os.Bundle
@@ -10,6 +10,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import com.example.empty_view_activity.Home
+import com.example.empty_view_activity.R
 import com.example.empty_view_activity.databinding.FragmentRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -39,21 +41,16 @@ class RegisterFragment : Fragment() {
 
         binding.registerButton.setOnClickListener {
             binding.progressBar.visibility = View.VISIBLE
-            var number = binding.phone.text.toString()
+            var email = binding.phone.text.toString()
             var password = binding.password.text.toString()
             var confirmPassword = binding.confirmPassword.text.toString()
-            if (TextUtils.isEmpty(number)) {
-                Toast.makeText(context, "Enter card number", Toast.LENGTH_SHORT).show();
+            if (TextUtils.isEmpty(email)) {
+                Toast.makeText(context, "Enter email address", Toast.LENGTH_SHORT).show();
                 binding.progressBar.visibility = View.GONE
                 return@setOnClickListener
             }
             if (TextUtils.isEmpty(password)) {
                 Toast.makeText(context, "Enter password", Toast.LENGTH_SHORT).show();
-                binding.progressBar.visibility = View.GONE
-                return@setOnClickListener
-            }
-            if (!number.matches(Regex("^\\d{8}$"))) {
-                Toast.makeText(context, "Card number must be 8 digits", Toast.LENGTH_SHORT).show()
                 binding.progressBar.visibility = View.GONE
                 return@setOnClickListener
             }
@@ -78,7 +75,6 @@ class RegisterFragment : Fragment() {
                 return@setOnClickListener
             }
 
-            val email = "$number@example.com"
             mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
                 if (it.isSuccessful) {
                     parentFragmentManager.popBackStackImmediate(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
