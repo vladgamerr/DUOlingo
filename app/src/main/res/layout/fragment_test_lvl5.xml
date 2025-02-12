@@ -7,7 +7,6 @@
     android:orientation="vertical"
     tools:context=".fragments.testFragments.TestLvl5">
 
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="350dp"
@@ -17,15 +16,14 @@
 
     <TextView
         android:id="@+id/textQuestion"
+        style="@style/CustomTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="20dp"
-        android:background="@color/bluewhite"
-        android:gravity="center"
-        android:text="Choose the correct answer, what is shown in the picture:"
-        android:textSize="16sp" />
 
+        android:background="@color/blue6"
+        android:gravity="center"
+        android:text="Choose the correct answer, what is shown in the picture:" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -36,12 +34,14 @@
 
         <RadioButton
             android:id="@+id/textAnswer1"
+            style="@style/CustomTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="1. Answer" />
 
         <RadioButton
             android:id="@+id/textAnswer2"
+            style="@style/CustomTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -49,6 +49,7 @@
 
         <RadioButton
             android:id="@+id/textAnswer3"
+            style="@style/CustomTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -56,6 +57,7 @@
 
         <RadioButton
             android:id="@+id/textAnswer4"
+            style="@style/CustomTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -65,6 +67,7 @@
 
     <Button
         android:id="@+id/nextButton"
+        style="@style/CustomButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

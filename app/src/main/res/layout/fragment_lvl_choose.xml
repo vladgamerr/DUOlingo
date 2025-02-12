@@ -73,7 +73,7 @@
                android:layout_marginBottom="50dp"
                android:background="@null"
                android:scaleType="fitXY"
-               android:src="@drawable/britain" />
+               android:src="@drawable/vsu" />
 
            <ImageButton
                android:id="@+id/imageButton5"
@@ -133,11 +133,11 @@
         android:src="@drawable/upper"/>
     <ImageButton
         android:id="@+id/backButton"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="@color/blue"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/blue6"
         android:scaleType="fitXY"
         android:src="@drawable/back"
         app:layout_constraintStart_toStartOf="parent"

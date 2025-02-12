@@ -10,7 +10,7 @@
         android:id="@+id/topLine"
         android:layout_width="match_parent"
         android:layout_height="90dp"
-        android:background="@color/skyblue"
+        android:background="@color/blue6"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
@@ -19,22 +19,20 @@
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="30dp"
-        android:backgroundTint="@color/none"
+        android:background="@null"
         android:scaleType="fitXY"
         android:src="@drawable/back"
         app:layout_constraintStart_toStartOf="@id/topLine"
         app:layout_constraintTop_toTopOf="@id/topLine" />
 
     <TextView
+        style="@style/CustomTextViewTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:text="VSU"
-        android:textColor="@color/bluewhite"
-        android:textSize="25sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/backButton"
-        app:layout_constraintStart_toEndOf="@+id/backButton"
+        app:layout_constraintStart_toEndOf="@id/backButton"
         app:layout_constraintTop_toTopOf="@id/backButton" />
 
     <ScrollView
@@ -43,7 +41,7 @@
         android:layout_height="0dp"
         android:padding="15dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topLine">
+        app:layout_constraintTop_toBottomOf="@id/topLine">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -51,28 +49,25 @@
             android:orientation="vertical">
 
             <TextView
+                style="@style/CustomTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/f4_t1"
-                android:textSize="22sp" />
+                android:text="@string/f4_t1" />
 
             <Button
                 android:id="@+id/linkButton"
+                style="@style/CustomTextButton"
                 android:layout_width="wrap_content"
-                android:text="> Virtual tour"
-                android:paddingStart="0dp"
-                android:textSize="22sp"
-                android:backgroundTint="@color/none"
-                android:textColor="@color/blue"
                 android:layout_height="50dp"
-                android:layout_marginTop="5dp"/>
+                android:layout_marginTop="5dp"
+                android:text="> Virtual tour" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/taskCardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:backgroundTint="@color/bluewhite"
+                android:backgroundTint="@color/blue6"
                 android:clickable="true"
                 app:cardCornerRadius="10dp">
 
@@ -84,15 +79,17 @@
                     android:visibility="gone">
 
                     <TextView
+                        style="@style/CustomTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="10dp"
-                        android:text="@string/f4_t2"
-                        android:textSize="22sp"
+                        android:text="@string/f1_t2"
                         android:visibility="visible" />
 
                     <Button
                         android:id="@+id/quizButton"
+                        android:textColor="@color/blue6"
+                        android:backgroundTint="@color/white"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -101,12 +98,12 @@
 
                 <TextView
                     android:id="@+id/toHide"
+                    style="@style/CustomTextView"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:padding="10dp"
                     android:text="Show task"
                     android:textAlignment="center"
-                    android:textSize="22sp"
                     android:visibility="visible" />
 
             </androidx.cardview.widget.CardView>

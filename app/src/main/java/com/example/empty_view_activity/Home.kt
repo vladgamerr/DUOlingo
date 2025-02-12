@@ -1,70 +1,90 @@
 package com.example.empty_view_activity
 
 import FragmentNavigator
+import android.media.MediaMetadataRetriever
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.MediaController
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.empty_view_activity.databinding.FragmentHomeBinding
 
-
 class Home : Fragment() {
+
+    private lateinit var binding: FragmentHomeBinding
+    private val dataModel: DataModel by activityViewModels()
     private lateinit var fragmentNavigator: FragmentNavigator
 
-
-    private val dataModel: DataModel by activityViewModels()
-    lateinit var binding: FragmentHomeBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-
-        /*  // Инициализация VideoView
-          val videoView = binding.videoView2
-
-          // Установка видео из ресурсов
-          val videoUri: Uri = Uri.parse("android.resource://" + packageName + "/" + R.raw.your_video)
-
-          // Установка контроллера
-          val mediaController = MediaController(this)
-          mediaController.setAnchorView(videoView)
-
-          // Установка видео и контроллера
-          videoView.setMediaController(mediaController)
-          videoView.setVideoURI(videoUri)
-
-          // Начало воспроизведения
-          videoView.requestFocus()
-          videoView.start()*/
-        binding = FragmentHomeBinding.inflate(inflater)
+    ): View {
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
+        setupVideoPlayer()
         return binding.root
     }
 
+    private fun setupVideoPlayer() {
+        val videoView = binding.videoView2
+        val playButton = binding.playButton
+        val thumbnail = binding.videoThumbnail
+
+        val videoUri: Uri = Uri.parse("android.resource://${requireContext().packageName}/${R.raw.hello}")
+
+        // Устанавливаем первый кадр видео в заглушку
+        val retriever = MediaMetadataRetriever()
+        retriever.setDataSource(requireContext(), videoUri)
+        val bitmap = retriever.getFrameAtTime(1, MediaMetadataRetriever.OPTION_CLOSEST_SYNC)
+        retriever.release()
+
+        if (bitmap != null) {
+            thumbnail.setImageBitmap(bitmap)
+        }
+
+        val mediaController = MediaController(requireContext())
+        mediaController.setAnchorView(videoView)
+        videoView.setMediaController(mediaController)
+
+        // Прячем видео, пока пользователь не нажмет "Старт"
+        thumbnail.visibility = View.VISIBLE
+        videoView.visibility = View.GONE
+        playButton.visibility = View.VISIBLE
+
+        // Обработчик нажатия на кнопку "Старт"
+        playButton.setOnClickListener {
+            thumbnail.visibility = View.GONE
+            playButton.visibility = View.GONE
+            videoView.visibility = View.VISIBLE
+
+            videoView.setVideoURI(videoUri)
+            videoView.setOnPreparedListener {
+                videoView.start()
+            }
+        }
+
+        // Обработчик завершения видео
+        videoView.setOnCompletionListener {
+            playButton.visibility = View.VISIBLE
+            thumbnail.visibility = View.VISIBLE
+            videoView.visibility = View.GONE
+        }
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        // dataModel.messageForFragment1.observe(activity as LifecycleOwner,{
-        //     binding.tvMessage1.text =it
-        //})
         fragmentNavigator = FragmentNavigator(requireActivity() as AppCompatActivity)
-        // Настройка обработки кнопки "Назад" через FragmentNavigator
         fragmentNavigator.setupBackNavigation(this)
+
         binding.btolvls.setOnClickListener {
             fragmentNavigator.openFragment(LvlChoose.newInstance(), R.id.place_holder1)
         }
-
-
     }
-    //  binding.bMestoAcivity1.setOnClickListener{
-    //     dataModel.messageForActivity.value = "Hello activity from Fragment 1"
-    //}*/
-
 
     companion object {
         @JvmStatic
         fun newInstance() = Home()
-
     }
-
 }
