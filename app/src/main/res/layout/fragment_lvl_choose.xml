@@ -34,7 +34,7 @@
                android:layout_height="wrap_content"
                android:layout_gravity="end"
                android:layout_marginEnd="40dp"
-               android:layout_marginTop="400dp"
+               android:layout_marginTop="370dp"
                android:layout_marginBottom="50dp"
                android:background="@null"
                android:scaleType="centerInside"
@@ -120,7 +120,7 @@
                android:layout_marginBottom="50dp"
                android:background="@null"
                android:scaleType="fitXY"
-               android:src="@drawable/natioanal" />
+               android:src="@drawable/national" />
 
        </LinearLayout>
    </androidx.constraintlayout.widget.ConstraintLayout>

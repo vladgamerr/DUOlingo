@@ -8,14 +8,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.MediaController
-import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.empty_view_activity.R
 import com.example.empty_view_activity.databinding.FragmentLvl1Binding
-import com.example.empty_view_activity.databinding.FragmentLvl2Binding
-import com.example.empty_view_activity.fragments.authFragments.RegisterFragment
 import com.example.empty_view_activity.fragments.testFragments.TestLvl1
 
 class LvlFragment1 : Fragment() {
@@ -58,7 +55,7 @@ class LvlFragment1 : Fragment() {
         val thumbnail = binding.videoThumbnail
 
         val videoUri: Uri =
-            Uri.parse("android.resource://${requireContext().packageName}/${R.raw.omasherove}")
+            Uri.parse("android.resource://${requireContext().packageName}/${R.raw.hello}")
 
         // Устанавливаем первый кадр видео в заглушку
         val retriever = MediaMetadataRetriever()
