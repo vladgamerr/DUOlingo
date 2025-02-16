@@ -10,7 +10,7 @@
         android:id="@+id/topLine"
         android:layout_width="match_parent"
         android:layout_height="90dp"
-        android:background="@color/skyblue"
+        android:background="@color/blue6"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:text="Tourism"
-        android:textColor="@color/bluewhite"
+        android:textColor="@color/blue4"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/backButton"
@@ -49,53 +49,64 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/f6_t1"
+                android:textColor="@color/blue4"
                 android:textSize="22sp" />
 
             <Button
                 android:id="@+id/presentationButton"
                 android:layout_width="wrap_content"
-                android:text="> Show presentation"
-                android:paddingStart="0dp"
-                android:textSize="22sp"
-                android:backgroundTint="@color/none"
-                android:textColor="@color/blue"
                 android:layout_height="50dp"
-                android:layout_marginTop="5dp"/>
+                android:layout_marginTop="5dp"
+                style="@style/CustomTextButton"
+                android:text="> Show presentation"
+
+                android:textSize="22sp"
+                android:paddingStart="0dp" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/taskCardView"
-                android:clickable="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                app:cardCornerRadius="10dp"
-                android:backgroundTint="@color/bluewhite">
-                <TextView
-                    android:id="@+id/toShow"
+                android:clickable="true"
+                style="@style/CustomCardView"
+                app:cardCornerRadius="10dp">
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    android:padding="10dp"
-                    android:text="@string/f6_t2"
-                    android:textSize="22sp" />
-                <TextView
-                    android:id="@+id/toHide"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:textAlignment="center"
-                    android:text="Show task"
-                    android:padding="10dp"
-                    android:textSize="22sp" />
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/CustomTextView"
+                        android:id="@+id/toShow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="@string/f6_t2"
+                        android:textSize="22sp"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/toHide"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="Show task"
+                        android:textAlignment="center"
+                        style="@style/CustomTextView"
+                        android:textSize="22sp"
+                        android:padding="10dp" />
+                </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
         </LinearLayout>
 
     </ScrollView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

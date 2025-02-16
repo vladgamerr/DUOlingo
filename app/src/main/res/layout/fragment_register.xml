@@ -12,18 +12,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Register"
-        android:textSize="25sp"
-        android:textStyle="bold"
         android:gravity="center"
+        style="@style/CustomTextViewTitle"
         android:layout_marginBottom="20dp"/>
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        >
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/phone"
-            android:hint="email"
+            android:backgroundTint="#C0C1C7"
+            android:hint="Email"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+             />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -33,9 +36,11 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password"
             android:inputType="textPassword"
-            android:hint="password"
+            android:hint="Password"
+            android:backgroundTint="#C0C1C7"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+          />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -44,23 +49,27 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/confirmPassword"
             android:inputType="textPassword"
-            android:hint="confirm password"
+            android:hint="Confirm Password"
+            android:backgroundTint="#C0C1C7"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            />
     </com.google.android.material.textfield.TextInputLayout>
 
     <ProgressBar
         android:id="@+id/progressBar"
         android:visibility="gone"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
+
     <Button
         android:id="@+id/registerButton"
         android:text="REGISTER"
-        android:backgroundTint="@color/blue"
-        android:layout_marginTop="15dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="?attr/colorPrimary"
+        android:textColor="?attr/colorOnPrimary" />
 
     <TextView
         android:id="@+id/loginNow"
@@ -70,6 +79,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Click to login"/>
+        android:text="Click to login"
+        android:textColor="?attr/colorSecondary" />
 
 </LinearLayout>

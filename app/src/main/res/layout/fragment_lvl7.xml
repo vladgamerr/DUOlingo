@@ -10,7 +10,7 @@
         android:id="@+id/topLine"
         android:layout_width="match_parent"
         android:layout_height="90dp"
-        android:background="@color/skyblue"
+        style="@style/CustomView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
@@ -21,7 +21,7 @@
         android:layout_marginTop="30dp"
         android:src="@drawable/back"
         android:scaleType="fitXY"
-        android:backgroundTint="@color/none"
+        android:background="@null"
         app:layout_constraintStart_toStartOf="@id/topLine"
         app:layout_constraintTop_toTopOf="@id/topLine" />
 
@@ -30,9 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:text="International cooperation"
-        android:textColor="@color/bluewhite"
-        android:textSize="25sp"
-        android:textStyle="bold"
+        style="@style/CustomTextViewTitle"
         app:layout_constraintBottom_toBottomOf="@id/backButton"
         app:layout_constraintStart_toEndOf="@+id/backButton"
         app:layout_constraintTop_toTopOf="@id/backButton" />
@@ -40,7 +38,7 @@
     <ScrollView
         android:id="@+id/contentView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:padding="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topLine">
@@ -54,17 +52,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/f7_t1"
+                android:textColor="?attr/colorSecondaryVariant"
                 android:textSize="22sp"
-                android:layout_marginBottom="15dp"/>
+                android:layout_marginBottom="15dp" />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/bluewhite"
+                style="@style/CustomCardView"
                 app:cardCornerRadius="10dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
+
                     android:layout_height="match_parent"
                     android:padding="10dp">
 
@@ -82,6 +82,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignBottom="@+id/seekBar"
                         android:text="0:00"
+                        style="@style/CustomTextView"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/seekBar" />
 
@@ -90,6 +91,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="0:00"
+                        style="@style/CustomTextView"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/seekBar" />
 
@@ -103,19 +105,23 @@
                         android:src="@drawable/ic_play_foreground"
                         app:layout_constraintTop_toBottomOf="@id/seekBar"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"/>
+                        app:layout_constraintEnd_toEndOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/taskCardView"
+                style="@style/CustomCardView"
                 android:clickable="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 app:cardCornerRadius="10dp"
-                android:backgroundTint="@color/bluewhite">
+               >
+
                 <TextView
+                    style="@style/CustomTextView"
                     android:id="@+id/toShow"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -123,7 +129,9 @@
                     android:padding="10dp"
                     android:text="@string/f7_t2"
                     android:textSize="22sp" />
+
                 <TextView
+                    style="@style/CustomTextView"
                     android:id="@+id/toHide"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
