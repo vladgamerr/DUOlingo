@@ -2,21 +2,14 @@ package com.example.empty_view_activity
 
 import FragmentNavigator
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.empty_view_activity.databinding.FragmentLvlChooseBinding
-import com.example.empty_view_activity.fragments.levelsFragments.LvlFragment1
-import com.example.empty_view_activity.fragments.levelsFragments.LvlFragment2
-import com.example.empty_view_activity.fragments.levelsFragments.LvlFragment3
-import com.example.empty_view_activity.fragments.levelsFragments.LvlFragment4
-import com.example.empty_view_activity.fragments.levelsFragments.LvlFragment5
-import com.example.empty_view_activity.fragments.levelsFragments.LvlFragment6
-import com.example.empty_view_activity.fragments.levelsFragments.LvlFragment7
-import com.example.empty_view_activity.fragments.levelsFragments.LvlFragment8
+import com.example.empty_view_activity.fragments.authFragments.CodeFragment
 
 class LvlChoose : Fragment() {
     private lateinit var fragmentNavigator: FragmentNavigator
@@ -38,31 +31,31 @@ class LvlChoose : Fragment() {
         // Настройка обработки кнопки "Назад" через FragmentNavigator
         fragmentNavigator.setupBackNavigation(this)
         binding.imageButton1.setOnClickListener {
-            fragmentNavigator.openFragment(LvlFragment1.newInstance(), R.id.place_holder1)
+            fragmentNavigator.openFragment(CodeFragment.newInstance(1), R.id.place_holder1)
         }
         binding.imageButton2.setOnClickListener {
-            fragmentNavigator.openFragment(LvlFragment2.newInstance(), R.id.place_holder1)
+            fragmentNavigator.openFragment(CodeFragment.newInstance(2), R.id.place_holder1)
         }
         binding.imageButton3.setOnClickListener {
-            fragmentNavigator.openFragment(LvlFragment3.newInstance(), R.id.place_holder1)
+            fragmentNavigator.openFragment(CodeFragment.newInstance(3), R.id.place_holder1)
         }
         binding.imageButton4.setOnClickListener {
-            fragmentNavigator.openFragment(LvlFragment4.newInstance(), R.id.place_holder1)
+            fragmentNavigator.openFragment(CodeFragment.newInstance(4), R.id.place_holder1)
         }
         binding.imageButton5.setOnClickListener {
-            fragmentNavigator.openFragment(LvlFragment5.newInstance(), R.id.place_holder1)
+            fragmentNavigator.openFragment(CodeFragment.newInstance(5), R.id.place_holder1)
         }
         binding.imageButton6.setOnClickListener {
-            fragmentNavigator.openFragment(LvlFragment6.newInstance(), R.id.place_holder1)
+            fragmentNavigator.openFragment(CodeFragment.newInstance(6), R.id.place_holder1)
         }
         binding.imageButton7.setOnClickListener {
-            fragmentNavigator.openFragment(LvlFragment7.newInstance(), R.id.place_holder1)
+            fragmentNavigator.openFragment(CodeFragment.newInstance(7), R.id.place_holder1)
         }
         binding.imageButton8.setOnClickListener {
-            fragmentNavigator.openFragment(LvlFragment8.newInstance(), R.id.place_holder1)
+            fragmentNavigator.openFragment(CodeFragment.newInstance(8), R.id.place_holder1)
         }
         binding.backButton.setOnClickListener {
-            fragmentNavigator.openFragment(Home.newInstance(), R.id.place_holder1,true)
+            fragmentNavigator.openFragment(Home.newInstance(), R.id.place_holder1, true)
         }
     }
 
