@@ -35,10 +35,6 @@ class LvlFragment5 : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         fragmentNavigator = FragmentNavigator(requireActivity() as AppCompatActivity)
 
-        binding.taskCardView.setOnClickListener {
-            binding.toShow.visibility = View.VISIBLE
-            binding.toHide.visibility = View.GONE
-        }
         binding.quizButton.setOnClickListener {
             fragmentNavigator.openFragment(TestLvl5.newInstance(), R.id.place_holder1, true)
         }

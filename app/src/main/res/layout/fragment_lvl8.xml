@@ -140,6 +140,9 @@
                     android:textSize="22sp" />
 
             </androidx.cardview.widget.CardView>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="120dp" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

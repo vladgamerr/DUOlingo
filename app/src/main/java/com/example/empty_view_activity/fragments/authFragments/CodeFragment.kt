@@ -139,6 +139,7 @@ class CodeFragment : Fragment() {
 
     private fun checkAndNavigate(lvlNum: Int, code: String) {
         if (codes[lvlNum] == code) {
+
             fragmentNavigator.openFragment(getFragmentByLevel(lvlNum), R.id.place_holder1, true)
         } else {
             binding.invalidCodeText.visibility = View.VISIBLE

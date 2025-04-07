@@ -1,6 +1,8 @@
 package com.example.empty_view_activity.fragments.levelsFragments
 
 import FragmentNavigator
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -44,6 +46,10 @@ class LvlFragment4 : Fragment() {
         }
         binding.backButton.setOnClickListener {
             parentFragmentManager.popBackStack()
+        }
+        binding.linkButton.setOnClickListener {
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://3d.vsu.by/"));
+            startActivity(browserIntent);
         }
     }
 
