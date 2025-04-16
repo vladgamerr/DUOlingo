@@ -54,8 +54,7 @@ class LvlFragment1 : Fragment() {
         val playButton = binding.playButton
         val thumbnail = binding.videoThumbnail
 
-        val videoUri: Uri =
-            Uri.parse("android.resource://${requireContext().packageName}/${R.raw.hello}")
+        val videoUri: Uri = Uri.parse("android.resource://${requireContext().packageName}/${R.raw.omasherove}")
 
         // Устанавливаем первый кадр видео в заглушку
         val retriever = MediaMetadataRetriever()
@@ -68,10 +67,8 @@ class LvlFragment1 : Fragment() {
         }
 
         val mediaController = MediaController(requireContext())
-        mediaController.setAnchorView(videoView) // Ограничиваем область управления
-
+        mediaController.setAnchorView(videoView)
         videoView.setMediaController(mediaController)
-        videoView.setVideoURI(videoUri)
 
         // Прячем видео, пока пользователь не нажмет "Старт"
         thumbnail.visibility = View.VISIBLE
@@ -89,6 +86,7 @@ class LvlFragment1 : Fragment() {
                 videoView.start()
             }
         }
+
         // Обработчик завершения видео
         videoView.setOnCompletionListener {
             playButton.visibility = View.VISIBLE
@@ -96,6 +94,7 @@ class LvlFragment1 : Fragment() {
             videoView.visibility = View.GONE
         }
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         fragmentNavigator = FragmentNavigator(requireActivity() as AppCompatActivity)

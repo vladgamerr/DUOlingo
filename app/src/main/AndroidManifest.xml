@@ -6,7 +6,10 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
+        android:roundIcon="@mipmap/logo"
+        android:icon="@mipmap/logo"
         android:label="Вместе генерируем успех"
+
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApp">
         <provider
